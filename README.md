@@ -1,36 +1,49 @@
-# 32-bit ALU in Verilog
+---
+# 4-bit ALU in Verilog
 
 ## Overview
-This repository contains the RTL design and verification of a 32-bit Arithmetic Logic Unit (ALU) implemented using Verilog HDL. The design supports basic arithmetic and logical operations and generates standard status flags.
+RTL design and verification of a 4-bit Arithmetic Logic Unit (ALU) implemented in Verilog HDL.
+The design performs basic arithmetic and logical operations and generates standard status flags.
 
+---
 ## Supported Operations
-- AND
-- OR
-- ADD
-- SUB
 
-Operation selection is controlled using a 2-bit control signal.
+| ALUcontrol | Operation |
+| ---------- | --------- |
+| 00         | AND       |
+| 01         | OR        |
+| 10         | ADD       |
+| 11         | SUB       |
 
-## Design Details
-- 32-bit combinational ALU
-- Control-driven operation selection
-- Status flags generated:
-  - Carry
-  - Zero
-  - Negative
-  - Overflow
-- Written using synthesizable Verilog
+---
+## Design Features
 
+* 4-bit combinational ALU
+* Synthesizable Verilog RTL
+* Carry captured using concatenation
+* Signed overflow detection logic
+* Status flags generated:
+
+  * Carry (C)
+  * Overflow (V)
+  * Negative (N)
+  * Zero (Z)
+---
 ## Verification
-- Custom Verilog testbench
-- Functional verification using multiple input combinations
-- Output and flag behavior verified through waveform analysis
-- Simulated using Xilinx Vivado
 
+* Custom Verilog testbench
+* Multiple functional test cases
+* Waveform-based validation
+* Simulated using Xilinx Vivado
+---
 ## Repository Structure
-- `src/alu.v` – ALU RTL design
-- `tb/alu_tb.v` – Testbench
+```
+4bit-ALU/
+│── src/ALU.v
+│── tb/ALU_tb.v
+└── README.md
+```
+## Tools Used
 
-## Tools
-- Verilog HDL
-- Xilinx Vivado
+* Verilog HDL
+* Xilinx Vivado
